@@ -76,6 +76,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      <img src="/hakase.png" alt="" className="deco-left" />
+      <img src="/hakase2.png" alt="" className="deco-right" />
       <div className="container">
         <header className="site-header">
           <h1 className="site-title">洗濯タグ解析</h1>

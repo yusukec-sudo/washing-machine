@@ -364,6 +364,34 @@ body {
   margin-bottom: 16px;
 }
 
+/* Decorative Characters */
+.deco-left,
+.deco-right {
+  position: fixed;
+  width: 180px;
+  height: auto;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.deco-left {
+  top: 60px;
+  left: 20px;
+}
+
+.deco-right {
+  bottom: 40px;
+  right: 20px;
+}
+
+@media (max-width: 900px) {
+  .deco-left,
+  .deco-right {
+    display: none;
+  }
+}
+
 /* Empty */
 .empty-state {
   padding: 60px 0;
