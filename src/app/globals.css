@@ -365,13 +365,15 @@ body {
 }
 
 .deco-left {
-  top: 500px;
+  top: 50%;
   left: 20px;
+  transform: translateY(-50%);
 }
 
 .deco-right {
-  top: 500px;
+  top: 50%;
   right: 20px;
+  transform: translateY(-50%);
 }
 
 @media (max-width: 1000px) {
