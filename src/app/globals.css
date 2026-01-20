@@ -365,12 +365,12 @@ body {
 }
 
 .deco-left {
-  top: 40px;
+  top: 500px;
   left: 20px;
 }
 
 .deco-right {
-  bottom: 20px;
+  top: 500px;
   right: 20px;
 }
 
