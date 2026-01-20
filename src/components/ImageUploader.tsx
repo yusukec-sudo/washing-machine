@@ -65,7 +65,7 @@ export function ImageUploader({ onImageSelect, preview, isLoading, onAnalyze, on
                   <span className="loading-dot" />
                 </span>
               ) : (
-                "解析"
+                "実行"
               )}
             </button>
           </div>
