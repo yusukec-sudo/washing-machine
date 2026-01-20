@@ -84,7 +84,7 @@ export default function Home() {
       )}
       <div className="container">
         <header className="site-header">
-          <h1 className="site-title">洗濯タグ解析</h1>
+          <h1 className="site-title">洗濯タグ解析 <span className="by-hakase">by 洗濯博士</span></h1>
           <p className="site-subtitle">ケアラベルを読み取り、洗い方を判定</p>
         </header>
 
