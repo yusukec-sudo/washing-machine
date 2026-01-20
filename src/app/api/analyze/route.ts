@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export type AnalysisResult = {
   success: true;
+  detected: string[];
   conclusion: string;
   notes: string[];
   recommendation: string;
@@ -20,13 +21,23 @@ const SYSTEM_PROMPT = `あなたは洗濯表示（ケアラベル）の専門家
 出力形式:
 {
   "confidence": "high" | "medium" | "low",
-  "conclusion": "この衣類の洗い方の結論を1-2文で簡潔に（例：「手洗いで優しく洗い、陰干ししてください」）",
+  "detected": [
+    "素材: 綿100%",
+    "洗濯: 40°C以下で洗濯機可",
+    "漂白: 禁止",
+    "乾燥: タンブラー乾燥可",
+    "アイロン: 中温まで可",
+    "ドライ: 石油系溶剤可"
+  ],
+  "conclusion": "この衣類の洗い方の結論を1文で（例：「通常の洗濯機で洗えます」「手洗いが必要です」）",
   "notes": ["注意点1", "注意点2", "注意点3"],
-  "recommendation": "おすすめの洗濯方法を1つ具体的に（例：「おしゃれ着用洗剤を使い、洗濯ネットに入れて弱水流で洗うのがおすすめです」）"
+  "recommendation": "おすすめの洗濯方法を1つ具体的に"
 }
 
 ルール:
-- notesは最大3つまで。重要な順に並べる
+- detectedには画像から読み取った事実を箇条書きで記載（素材、洗濯、漂白、乾燥、アイロン、ドライクリーニングなど）
+- 記号だけでなくテキスト情報（産地、ブランド名以外）も含める
+- notesは最大3つまで。重要な注意点のみ
 - 画像が不鮮明、洗濯タグでない、または読み取れない場合は confidence を "low" にする
 - 日本語で回答する
 - JSONのみを返す（説明文は不要）`;
@@ -105,6 +116,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
+      detected: parsed.detected || [],
       conclusion: parsed.conclusion,
       notes: parsed.notes.slice(0, 3),
       recommendation: parsed.recommendation,

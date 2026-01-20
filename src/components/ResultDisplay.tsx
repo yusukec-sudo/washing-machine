@@ -25,14 +25,27 @@ export function ResultDisplay({ result, onSave, canSave }: Props) {
   return (
     <div className="animate-in">
       <div className="result-block">
+        {result.detected && result.detected.length > 0 && (
+          <div className="result-section">
+            <p className="result-label">Detected (検出)</p>
+            <ul className="result-list">
+              {result.detected.map((item, i) => (
+                <li key={i}>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <div className="result-section">
-          <p className="result-label">Conclusion</p>
+          <p className="result-label">Conclusion (結論)</p>
           <p className="result-text">{result.conclusion}</p>
         </div>
 
         {result.notes.length > 0 && (
           <div className="result-section">
-            <p className="result-label">Notes</p>
+            <p className="result-label">Notes (注意)</p>
             <ul className="result-list">
               {result.notes.map((note, i) => (
                 <li key={i}>
@@ -45,7 +58,7 @@ export function ResultDisplay({ result, onSave, canSave }: Props) {
         )}
 
         <div className="result-section">
-          <p className="result-label">Recommendation</p>
+          <p className="result-label">Recommendation (推奨)</p>
           <p className="result-text">{result.recommendation}</p>
         </div>
       </div>

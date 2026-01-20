@@ -1,5 +1,6 @@
 export type AnalysisResult = {
   success: true;
+  detected: string[];
   conclusion: string;
   notes: string[];
   recommendation: string;
@@ -13,6 +14,7 @@ export type SavedResult = {
   id: string;
   timestamp: number;
   imagePreview: string;
+  detected: string[];
   conclusion: string;
   notes: string[];
   recommendation: string;

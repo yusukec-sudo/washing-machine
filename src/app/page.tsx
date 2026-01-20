@@ -66,6 +66,7 @@ export default function Home() {
       id: crypto.randomUUID(),
       timestamp: Date.now(),
       imagePreview: preview,
+      detected: result.detected,
       conclusion: result.conclusion,
       notes: result.notes,
       recommendation: result.recommendation,
@@ -105,6 +106,7 @@ export default function Home() {
                 setPreview(item.imagePreview);
                 setResult({
                   success: true,
+                  detected: item.detected || [],
                   conclusion: item.conclusion,
                   notes: item.notes,
                   recommendation: item.recommendation,
