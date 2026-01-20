@@ -346,14 +346,32 @@ body {
   color: var(--black);
 }
 
+/* Hakase Character */
+.hakase-result {
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: -8px;
+}
+
+.hakase-img {
+  width: 120px;
+  height: auto;
+}
+
+.hakase-empty {
+  width: 160px;
+  height: auto;
+  margin-bottom: 16px;
+}
+
 /* Empty */
 .empty-state {
-  padding: 80px 0;
+  padding: 60px 0;
   text-align: center;
 }
 
 .empty-text {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--gray-500);
 }
 

@@ -24,6 +24,9 @@ export function ResultDisplay({ result, onSave, canSave }: Props) {
 
   return (
     <div className="animate-in">
+      <div className="hakase-result">
+        <img src="/hakase.png" alt="洗濯博士" className="hakase-img" />
+      </div>
       <div className="result-block">
         {result.detected && result.detected.length > 0 && (
           <div className="result-section">

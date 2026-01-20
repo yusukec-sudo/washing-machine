@@ -12,7 +12,8 @@ export function HistoryPanel({ history, onDelete, onSelect }: Props) {
   if (history.length === 0) {
     return (
       <div className="empty-state animate-in">
-        <p className="empty-text">No saved history</p>
+        <img src="/hakase.png" alt="洗濯博士" className="hakase-empty" />
+        <p className="empty-text">まだ履歴がないぞい</p>
       </div>
     );
   }
