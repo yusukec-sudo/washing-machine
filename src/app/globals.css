@@ -357,7 +357,7 @@ body {
 .deco-left,
 .deco-right {
   position: fixed;
-  width: 280px;
+  width: 400px;
   height: auto;
   opacity: 0.2;
   pointer-events: none;
