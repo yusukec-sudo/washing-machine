@@ -347,17 +347,6 @@ body {
 }
 
 /* Hakase Character */
-.hakase-result {
-  text-align: center;
-  margin-top: 32px;
-  margin-bottom: -8px;
-}
-
-.hakase-img {
-  width: 120px;
-  height: auto;
-}
-
 .hakase-empty {
   width: 160px;
   height: auto;
@@ -368,24 +357,24 @@ body {
 .deco-left,
 .deco-right {
   position: fixed;
-  width: 180px;
+  width: 280px;
   height: auto;
-  opacity: 0.15;
+  opacity: 0.2;
   pointer-events: none;
   z-index: -1;
 }
 
 .deco-left {
-  top: 60px;
+  top: 40px;
   left: 20px;
 }
 
 .deco-right {
-  bottom: 40px;
+  bottom: 20px;
   right: 20px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .deco-left,
   .deco-right {
     display: none;
